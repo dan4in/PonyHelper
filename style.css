@@ -1,0 +1,75 @@
+#PonyHelper_generate {
+    height: 100%;
+}
+
+#PonyHelper_main {
+    margin-top: 1em;
+}
+
+#tab_PonyHelper table tr {
+    height: 1px;
+}
+
+#tab_PonyHelper table tr td {
+    height: 100%;
+    padding: 0.3em;
+}
+
+#tab_PonyHelper .prompt {
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    height: 100%;
+}
+
+#tab_PonyHelper .prompt p {
+    white-space: pre-line;
+}
+
+#tab_PonyHelper .sendto {
+    width: 8em;
+}
+
+#tab_PonyHelper .sendto a {
+    cursor: pointer;
+    display: block;
+    margin: 0.2em;
+    padding: 0.4em;
+}
+
+#tab_PonyHelper .gr-form {
+    border: none;
+    padding-bottom: 0.5em;
+}
+
+#PonyHelper_explanation table {
+    border-collapse: collapse;
+}
+
+#PonyHelper_explanation table td,
+#PonyHelper_explanation table th {
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    vertical-align: left;
+}
+
+/* Specific styling for checkboxes and sliders */
+#tab_PonyHelper .gr-checkbox {
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+}
+
+#tab_PonyHelper .gr-checkbox input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
+#tab_PonyHelper .gr-slider {
+    margin: 0.5em 0;
+    width: 20%;
+}
+
+#tab_PonyHelper .gr-slider .gr-slider-range {
+    width: 20%;
+}
+
+#tab_PonyHelper .gr-button {
+    margin-top: 1em;
+}
