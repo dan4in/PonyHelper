@@ -6,13 +6,26 @@ from modules import script_callbacks, generation_parameters_copypaste, ui
 
 # Directory of the current script
 base_dir = os.path.dirname(__file__)
-# Directory where data files are stored
+# Directory where data files are expected to be stored
 data_dir = os.path.join(base_dir, 'Data')
 
+def find_file_in_directory(filename, search_directory):
+    """Recursively search for a file in a directory."""
+    for root, _, files in os.walk(search_directory):
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
+
 def read_tags_from_file(filename):
+    # First, check in the data directory
     filepath = os.path.join(data_dir, filename)
     if not os.path.exists(filepath):
-        raise FileNotFoundError(f"No such file: '{filepath}'")
+        # If not found, search in the entire PonyHelper directory
+        pony_helper_dir = os.path.dirname(base_dir)
+        filepath = find_file_in_directory(filename, pony_helper_dir)
+        if not filepath:
+            print(f"Warning: No such file: '{filename}' in the PonyHelper directory")
+            return []
     with open(filepath, 'r') as file:
         return [tag.strip() for tag in file]
 
